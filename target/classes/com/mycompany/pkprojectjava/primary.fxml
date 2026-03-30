@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.CheckBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="645.0" prefWidth="768.0" spacing="10.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.pkprojectjava.controller.PrimaryController">
+   <children>
+      <MenuBar>
+        <menus>
+            <Menu mnemonicParsing="false" text="Plik">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#createNew" text="Nowy" />
+                  <MenuItem mnemonicParsing="false" onAction="#open" text="Otwórz…" />
+                  <Menu fx:id="recentMenu" mnemonicParsing="false" text="Ostatnio otwierane" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#close" text="Zamknij" />
+                  <MenuItem mnemonicParsing="false" onAction="#save" text="Zapisz" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveAs" text="Zapisz jako…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#exportChart" text="Eksportuj wykres…" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#quit" text="Zakończ" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edycja">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#undo" text="Cofnij" />
+                  <MenuItem mnemonicParsing="false" onAction="#redo" text="Ponów" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#add" text="Dodaj" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#copy" text="Kopiuj" />
+                  <MenuItem mnemonicParsing="false" onAction="#paste" text="Wklej" />
+                  <MenuItem mnemonicParsing="false" onAction="#delete" text="Usuń" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectAll" text="Zaznacz wszystko" />
+                  <MenuItem mnemonicParsing="false" onAction="#unselectAll" text="Odznacz wszystko" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Opcje tabeli">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#addRow" text="Dodaj wiersz" />
+                <MenuItem mnemonicParsing="false" onAction="#deleteRow" text="Usuń wiersz" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#addColumn" text="Dodaj kolumnę" />
+                <MenuItem mnemonicParsing="false" onAction="#deleteColumn" text="Usuń kolumnę" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Opcje wykresu">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#generateChart" text="Generuj wykres z tabeli" />
+                  <MenuItem mnemonicParsing="false" onAction="#generateRandomChart" text="Generuj losowy wykres (test)" />
+                  <MenuItem mnemonicParsing="false" onAction="#generateChartFromFormula" text="Generuj wykres ze wzoru" />
+                  <MenuItem mnemonicParsing="false" onAction="#generateChartFromMultipleFormulas" text="Generuj wykres z wielu wzorów" />
+                  <MenuItem mnemonicParsing="false" onAction="#generateMultiSeriesChart" text="Wykres wieloseryjny z tabeli" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Typ wykresu">
+                    <items>
+                      <RadioMenuItem fx:id="barChartItem" mnemonicParsing="false" onAction="#switchToBarChart" selected="true" text="Słupkowy">
+                         <toggleGroup>
+                            <ToggleGroup fx:id="chartTypeGroup" />
+                         </toggleGroup>
+                      </RadioMenuItem>
+                      <RadioMenuItem fx:id="lineChartItem" mnemonicParsing="false" onAction="#switchToLineChart" text="Liniowy" toggleGroup="$chartTypeGroup" />
+                      <RadioMenuItem fx:id="areaChartItem" mnemonicParsing="false" onAction="#switchToAreaChart" text="Warstwowy" toggleGroup="$chartTypeGroup" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#setChartTitle" text="Ustaw tytuł wykresu" />
+                  <MenuItem mnemonicParsing="false" onAction="#setXAxisTitle" text="Ustaw tytuł osi X" />
+                  <MenuItem mnemonicParsing="false" onAction="#setYAxisTitle" text="Ustaw tytuł osi Y" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#clearChart" text="Wyczyść wykres" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Widok">
+            <items>
+              <Menu mnemonicParsing="false" text="Motyw">
+                <items>
+                  <RadioMenuItem fx:id="lightThemeItem" mnemonicParsing="false" onAction="#switchToLightTheme" selected="true" text="Jasny">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="themeGroup" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem fx:id="darkThemeItem" mnemonicParsing="false" onAction="#switchToDarkTheme" text="Ciemny" toggleGroup="$themeGroup" />
+                </items>
+              </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Pomoc">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#about" text="O programie" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-padding: 5;">
+         <children>
+            <Label text="Filtr:" />
+            <TextField fx:id="filterField" promptText="Szukaj w tabeli..." HBox.hgrow="ALWAYS" />
+            <Label fx:id="filterLabel" text="Wyświetlane: 0 z 0 wierszy" />
+         </children>
+      </HBox>
+      <SplitPane dividerPositions="0.55, 0.85" orientation="VERTICAL" VBox.vgrow="ALWAYS">
+        <items>
+            <VBox spacing="5">
+               <children>
+                  <TableView fx:id="table" editable="true" prefHeight="200.0" prefWidth="768.0" VBox.vgrow="ALWAYS" />
+                  <HBox fx:id="statsPanel" alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 5; -fx-border-color: gray; -fx-border-width: 1 0 0 0;">
+                     <children>
+                        <Label fx:id="statsLabel" text="Kliknij komórkę w kolumnie, aby zobaczyć statystyki" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox spacing="5">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 5;">
+                     <children>
+                        <CheckBox fx:id="showRegressionCheckBox" text="Pokaż regresję liniową" onAction="#toggleRegression" />
+                        <Label fx:id="regressionEquationLabel" text="" />
+                     </children>
+                  </HBox>
+                  <StackPane fx:id="chartContainer" prefHeight="200.0" prefWidth="768.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <BarChart fx:id="barChart" prefHeight="200.0" prefWidth="768.0">
+                          <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                              <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+        </items>
+      </SplitPane>
+
+   </children>
+</VBox>

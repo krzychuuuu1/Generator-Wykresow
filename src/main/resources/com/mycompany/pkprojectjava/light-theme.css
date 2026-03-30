@@ -1,0 +1,274 @@
+/* Light Theme CSS for JavaFX Data Table Application */
+
+/* Root and Base Colors */
+.root {
+    -fx-base: #f4f4f4;
+    -fx-background: #ffffff;
+    -fx-control-inner-background: #ffffff;
+    -fx-accent: #0096c9;
+    -fx-default-button: #0096c9;
+    -fx-focus-color: #0096c9;
+    -fx-faint-focus-color: #0096c922;
+    -fx-text-base-color: #2c3e50;
+}
+
+/* Menu Bar */
+.menu-bar {
+    -fx-background-color: #e8e8e8;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 5 10 5 10;
+}
+
+.menu-bar .label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 13px;
+}
+
+.menu-bar .menu:hover,
+.menu-bar .menu:showing {
+    -fx-background-color: #d0d0d0;
+    -fx-background-radius: 3;
+}
+
+.context-menu {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #c0c0c0;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 3);
+}
+
+.menu-item {
+    -fx-background-color: transparent;
+    -fx-padding: 5 20 5 20;
+}
+
+.menu-item:focused {
+    -fx-background-color: #e3f2fd;
+}
+
+.menu-item .label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 13px;
+}
+
+/* Table View */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 8 10 8 10;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #2c3e50;
+    -fx-border-color: #e8e8e8;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 12px;
+}
+
+.table-row-cell {
+    -fx-background-color: #ffffff;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #b3d9ff;
+    -fx-table-cell-border-color: #0096c9;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #e3f2fd;
+}
+
+/* Chart Styling */
+.chart {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 1;
+    -fx-padding: 10;
+}
+
+.chart-title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.chart-content {
+    -fx-padding: 10;
+}
+
+.chart-legend {
+    -fx-background-color: #f8f8f8;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 1;
+    -fx-padding: 10;
+}
+
+.chart-legend-item {
+    -fx-text-fill: #2c3e50;
+}
+
+.axis {
+    -fx-tick-label-fill: #2c3e50;
+    -fx-font-size: 11px;
+}
+
+.axis-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.chart-bar {
+    -fx-bar-fill: #0096c9;
+}
+
+.chart-line-symbol {
+    -fx-background-color: #0096c9, white;
+}
+
+.chart-series-line {
+    -fx-stroke: #0096c9;
+    -fx-stroke-width: 2px;
+}
+
+.chart-series-area-fill {
+    -fx-fill: #0096c944;
+}
+
+.chart-series-area-line {
+    -fx-stroke: #0096c9;
+    -fx-stroke-width: 2px;
+}
+
+/* Split Pane */
+.split-pane {
+    -fx-background-color: #f4f4f4;
+}
+
+.split-pane-divider {
+    -fx-background-color: #d0d0d0;
+    -fx-padding: 0 1 0 1;
+}
+
+/* Dialogs */
+.dialog-pane {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 1;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
+    -fx-padding: 15;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane .content {
+    -fx-padding: 20;
+}
+
+.dialog-pane .label {
+    -fx-text-fill: #2c3e50;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #e8e8e8);
+    -fx-border-color: #c0c0c0;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 5 15 5 15;
+    -fx-font-size: 13px;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #d8d8d8);
+    -fx-border-color: #a0a0a0;
+}
+
+.button:pressed {
+    -fx-background-color: #d0d0d0;
+}
+
+.button:default {
+    -fx-background-color: linear-gradient(to bottom, #0096c9, #0080b0);
+    -fx-text-fill: white;
+    -fx-border-color: #006080;
+}
+
+.button:default:hover {
+    -fx-background-color: linear-gradient(to bottom, #00a8dd, #0096c9);
+}
+
+/* Text Input */
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #c0c0c0;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 5 10 5 10;
+}
+
+.text-field:focused {
+    -fx-border-color: #0096c9;
+    -fx-border-width: 2;
+}
+
+/* Scroll Bar */
+.scroll-bar {
+    -fx-background-color: #f4f4f4;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #c0c0c0;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #a0a0a0;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+}
+
+/* VBox and HBox */
+.vbox, .hbox {
+    -fx-background-color: #f4f4f4;
+}
